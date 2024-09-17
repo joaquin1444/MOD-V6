@@ -121,7 +121,8 @@ instalar() {
     [[ ! -d /etc/ADMcgh/bin ]] && mkdir -p /etc/ADMcgh/bin
     wget -q -O /etc/ADMcgh/bin/useradd https://raw.githubusercontent.com/joaquin1444/vps-mx-pro/main/script-v6/Otros/useradd && chmod +x /etc/ADMcgh/bin/useradd &> /dev/null
     [[ ! -e /usr/bin/add_new_user ]] && ln -s /etc/ADMcgh/bin/useradd /usr/bin/add_new_user
-
+reiniciar
+sleep 1
     echo "Instalación completada."
 }
 

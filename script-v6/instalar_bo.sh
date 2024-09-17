@@ -179,10 +179,10 @@ clear&&clear
 		edit_admins
 		;;
 		6)
-		limit_creadores
+		desinstalar
 		;;
 		7)
-            desinstalar
+            limit_creadores
             ;;
         0)
             echo "Saliendo del menú..."

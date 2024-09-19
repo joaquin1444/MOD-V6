@@ -97,34 +97,41 @@ instalar() {
     echo "Instalando..."
     [[ ! -e "/bin/ShellBot.sh" ]] && wget -O /bin/ShellBot.sh https://raw.githubusercontent.com/ChumoGH/ADMcgh/main/BINARIOS/ShellBot/ShellBot.sh &> /dev/null
     chmod +x /bin/ShellBot.sh
-
     [[ ! -d /etc/ADMcgh ]] && mkdir -p /etc/ADMcgh/bin
     [[ ! -d /etc/adm-lite ]] && mkdir -p /etc/adm-lite
-
     wget -q -O /etc/adm-lite/ultimatebot https://www.dropbox.com/scl/fi/wqd4btgpvr607s6acb4gh/ultimate_botv2.sh?rlkey=kbkmuy5o1zupylvq6wyhbd8nv && chmod +x /etc/adm-lite/ultimatebot &> /dev/null
-
     wget -O /etc/adm-lite/trans https://raw.githubusercontent.com/ChumoGH/chumogh-gmail.com/master/trans -o /dev/null 2>&1
     chmod +x /etc/adm-lite/trans
     rm -f $(which trans) &>/dev/null
     [[ ! -e /bin/trans ]] && ln -s /etc/adm-lite/trans /bin/trans
+    
     wget -q -O /etc/adm-lite/bot_codes https://www.dropbox.com/s/23cjojjxaaun6f1/bot_codes-ant.sh && chmod +x /etc/adm-lite/bot_codes &> /dev/null
+    
     [[ $(dpkg --get-selections | grep -w "at" | head -1) ]] || apt-get install at -y &>/dev/null
 
     [[ ! -e /bin/UserAll ]] && {
-        [[ $(uname -m 2> /dev/null) != x86_64 ]] && rm_rf="https://raw.githubusercontent.com/ChumoGH/ADMcgh/main/BINARIOS/aarch64/UserAll.bin" || local rm_rf="https://raw.githubusercontent.com/ChumoGH/ADMcgh/main/BINARIOS/x86_64/UserAll.bin"
+        if [[ $(uname -m 2> /dev/null) != x86_64 ]]; then
+            rm_rf="https://raw.githubusercontent.com/ChumoGH/ADMcgh/main/BINARIOS/aarch64/UserAll.bin"
+        else
+            rm_rf="https://raw.githubusercontent.com/ChumoGH/ADMcgh/main/BINARIOS/x86_64/UserAll.bin"
+        fi
         [[ -e /bin/UserAll ]] && rm -f /bin/UserAll
         if wget -O /etc/adm-lite/UserAll "${rm_rf}" &>/dev/null; then
             chmod +x /etc/adm-lite/UserAll
             [[ ! -e /bin/UserAll ]] && ln -s /etc/adm-lite/UserAll /bin/UserAll
         fi
     }
-    [[ ! -d /etc/ADMcgh/bin ]] && mkdir -p /etc/ADMcgh/bin
-    wget -q -O /etc/ADMcgh/bin/useradd https://raw.githubusercontent.com/joaquin1444/vps-mx-pro/main/script-v6/Otros/useradd && chmod +x /etc/ADMcgh/bin/useradd &> /dev/null
-    [[ ! -e /usr/bin/add_new_user ]] && ln -s /etc/ADMcgh/bin/useradd /usr/bin/add_new_user
-reiniciar
-sleep 1
+    if systemctl list-units --type=service | grep -q BotSSH.service; then
+        echo "Reiniciando BotSSH..."
+        systemctl restart BotSSH.service
+        echo "Reinicio completado."
+    else
+        echo "Servicio BotSSH no encontrado. Asegúrate de que esté instalado correctamente."
+    fi
+
     echo "Instalación completada."
 }
+
 
 reiniciar() {
     echo "Reiniciando..."

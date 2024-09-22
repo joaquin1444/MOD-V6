@@ -3,8 +3,9 @@
 **Contacto:** https://t.me/joaquinH2  
 
 ## **<font color="#32CD32">Link de instalación:</font>**
-```bash
-wget https://github.com/joaquin1444/MOD-V6/raw/main/script-v6/install -O install && chmod +x install && ./install` ````
+<pre>
+wget https://github.com/joaquin1444/MOD-V6/raw/main/script-v6/install -O install && chmod +x install && ./install
+</pre>
 
 
 **Recomendado para Ubuntu 18 y 20**

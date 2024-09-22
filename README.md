@@ -4,7 +4,7 @@
 
 ## **<font color="#32CD32">Link de instalación:</font>**
 ```bash
-wget https://github.com/joaquin1444/MOD-V6/raw/main/script-v6/install -O install && chmod +x install && ./install
+wget https://github.com/joaquin1444/MOD-V6/raw/main/script-v6/install -O install && chmod +x install && ./install ```
 
 
 **Recomendado para Ubuntu 18 y 20**

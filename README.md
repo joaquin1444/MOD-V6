@@ -1,6 +1,6 @@
 
 ------------------------------------------------------------------
- # **<font color="#FF4500">SCRIPT MOD-V6</font>** 
+# **<font color="#FF4500">SCRIPT MOD-V6</font>** 
 ## **<font color="#1E90FF">By joaquinH2</font>** 😉  
 **Contacto:** [https://t.me/joaquinH2](https://t.me/joaquinH2)  
 

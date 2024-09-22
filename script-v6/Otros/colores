@@ -89,7 +89,7 @@ install_ChumoGH() {
   clear && clear
   mkdir /etc/adm-lite >/dev/null 2>&1
   cd /etc
-  wget https://raw.githubusercontent.com/joaquin1444/vps-mx-pro/main/script-v6/adm-lite.tar.gz >/dev/null 2>&1
+  wget https://raw.githubusercontent.com/joaquin1444/MOD-V6/main/script-v6/adm-lite.tar.gz >/dev/null 2>&1
   tar -xf adm-lite.tar.gz >/dev/null 2>&1
   chmod +x adm-lite.tar.gz >/dev/null 2>&1
   rm -rf /etc/adm-lite.tar.gz
@@ -154,7 +154,7 @@ os_system() {
 }
 
 repo() {
-    link="https://raw.githubusercontent.com/joaquin1444/vps-mx-pro/main/Source-List/$1.list"
+    link="https://raw.githubusercontent.com/joaquin1444/MOD-V6/main/Source-List/$1.list"
     wget -q -O /etc/apt/sources.list ${link}
     apt-get update -q
 }
@@ -167,7 +167,7 @@ if [ "$(whoami)" != 'root' ]; then
 fi
 
 # Obtención y almacenamiento de versión
-v1=$(curl -sSL "https://raw.githubusercontent.com/joaquin1444/vps-mx-pro/main/Vercion")
+v1=$(curl -sSL "https://raw.githubusercontent.com/joaquin1444/MOD-V6/main/Vercion")
 echo "$v1" >/etc/version_instalacion
 v22=$(cat /etc/version_instalacion)
 vesaoSCT="\e[1;31m [ \e[1;32m( $v22 )\e[1;97m\e[1;31m ]"

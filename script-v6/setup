@@ -13,7 +13,7 @@ rm -f wget*
 echo -e " ESPERE UN MOMENTO "
 apt-get install curl -y &>/dev/null
 apt install sudo -y &> /dev/null
-source <(curl -sSL https://raw.githubusercontent.com/joaquin1444/vps-mx-pro/master/msg-bar/msg)
+source <(curl -sSL https://raw.githubusercontent.com/joaquin1444/MOD-V6/master/msg-bar/msg)
 COLS=$(tput cols)
 os_system(){ 
  system=$(cat -n /etc/issue |grep 1 |cut -d ' ' -f6,7,8 |sed 's/1//' |sed 's/      //') 
@@ -678,7 +678,7 @@ del(){
 
 
 [[ -d /bin/ejecutar ]] && {
-[[ -e /bin/ejecutar/msg ]] || wget -q -O /bin/ejecutar/msg  https://raw.githubusercontent.com/joaquin1444/vps-mx-pro/master/msg-bar/msg
+[[ -e /bin/ejecutar/msg ]] || wget -q -O /bin/ejecutar/msg  https://raw.githubusercontent.com/joaquin1444/MOD-V6/master/msg-bar/msg
 } || mkdir /bin/ejecutar
 cor[0]="\033[0m"
 cor[1]="\033[1;34m"

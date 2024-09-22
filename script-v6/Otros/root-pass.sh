@@ -2,10 +2,10 @@
 <<<<<<< HEAD
 #Autor: Henry Chumo 
 #Alias : ChumoGH
-source <(curl -sL https://raw.githubusercontent.com/joaquin1444/vps-mx-pro/main/script-v6/Otros/msg)
+source <(curl -sL https://raw.githubusercontent.com/joaquin1444/MOD-V6/main/script-v6/Otros/msg)
 =======
 
-source <(curl -sL https://raw.githubusercontent.com/joaquin1444/vps-mx-pro/main/script-v6/Otros/msg)
+source <(curl -sL https://raw.githubusercontent.com/joaquin1444/MOD-V6/main/script-v6/Otros/msg)
 >>>>>>> 19ba2a11554f9540fb5920c6a1168777ee8a521e
 rootpass () {
 clear

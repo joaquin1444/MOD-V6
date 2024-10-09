@@ -6,7 +6,7 @@
 
 <p dir="auto"><img src="https://github.com/joaquin1444/MOD-V6/blob/main/imagenes/Captura%20de%20pantalla%202024-09-11%20123421.png" alt="" width="500" height="408" /></p>
   
-<p dir="auto"><img src="https://github.com/joaquin1444/MOD-V6/blob/main/imagenes/Captura%20de%20pantalla%202024-09-11%20123612.png" alt="" width="500" height="408" /></p>
+<p dir="auto"><img src="https://github.com/joaquin1444/MOD-V6/blob/main/imagenes/Captura%20de%20pantalla%202024-10-08%20210700.png" alt="" width="500" height="408" /></p>
   
 <p dir="auto"><img src="https://github.com/joaquin1444/MOD-V6/blob/main/imagenes/Captura%20de%20pantalla%202024-09-11%20124105.png" alt="" width="500" height="408" /></p>
   

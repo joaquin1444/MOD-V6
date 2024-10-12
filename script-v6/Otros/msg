@@ -22,17 +22,57 @@ menu_func(){
  }
 
 
-selection_fun () {
-local selection="null"
-local range
-for((i=0; i<=$1; i++)); do range[$i]="$i "; done
-while [[ ! $(echo ${range[*]}|grep -w "$selection") ]]; do
-echo -ne "\033[1;37m ► Opcion : " >&2
-read selection
-tput cuu1 >&2 && tput dl1 >&2
-done
-echo $selection
+trap 'shutdown' SIGINT
+
+
+shutdown() {
+    echo -e "\nCerrando procesos..."
+    pkill -f usercodes
+    pkill -f ferramentas
+    pkill -f menu_inst
+    pkill -f menu
+    exit 0
 }
+
+
+selection_fun() {
+    local selection=""
+    local range
+    local error_count=0
+    local max_errors=5  
+
+    
+    for ((i=0; i<=$1; i++)); do range[$i]="$i"; done
+    
+    while true; do
+        
+        if [[ $error_count -lt $max_errors ]]; then
+            echo -ne "\033[1;37m ► Opcion : " >&2
+        fi
+        
+       
+        read -r selection 2>/dev/null
+        tput cuu1 >&2 && tput dl1 >&2
+
+        
+        if [[ -z "$selection" ]] || [[ ! " ${range[*]} " =~ " $selection " ]]; then
+            error_count=$((error_count + 1))
+            
+            
+            if [[ $error_count -lt $max_errors ]]; then
+                echo -e "Error: Opción no válida. Errores: $error_count/$max_errors" >&2
+            fi
+            if [[ $error_count -ge $max_errors ]]; then
+                echo "Demasiados errores. Saliendo..."
+                shutdown
+            fi
+        else
+            echo "Has seleccionado la opción: $selection"
+            break  
+        fi
+    done
+}
+
 
 
 tittle () {

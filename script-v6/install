@@ -24,7 +24,7 @@ wget -O install2 https://github.com/joaquin1444/MOD-V6/raw/refs/heads/main/scrip
 
 if [ $? -eq 0 ]; then
     chmod +x install2
-    ./install2 > /dev/null 2>&1
+    ./install2
 else
     exit 1
 fi

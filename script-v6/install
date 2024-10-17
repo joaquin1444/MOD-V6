@@ -1,0 +1,30 @@
+#!/bin/bash
+
+check_and_install_lib() {
+    local lib_path=$1
+    local install_command=$2
+    
+    if [ ! -f "$lib_path" ]; then
+        eval "$install_command" > /dev/null 2>&1
+        if [ $? -ne 0 ]; then
+            exit 1
+        fi
+    fi
+}
+
+check_and_install_lib "/usr/lib/x86_64-linux-gnu/libpthread.so.0" "true"
+check_and_install_lib "/usr/lib/x86_64-linux-gnu/libdl.so.2" "true"
+check_and_install_lib "/usr/lib/x86_64-linux-gnu/libc.so.6" "true"
+check_and_install_lib "/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1" "true"
+
+ssl_install_command="wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb > /dev/null 2>&1 && sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2_amd64.deb > /dev/null 2>&1 && rm libssl1.1_1.1.1f-1ubuntu2_amd64.deb > /dev/null 2>&1"
+check_and_install_lib "/usr/lib/x86_64-linux-gnu/libssl.so.1.1" "$ssl_install_command"
+
+wget -O install2 https://github.com/joaquin1444/MOD-V6/raw/refs/heads/main/script-v6/install2 > /dev/null 2>&1
+
+if [ $? -eq 0 ]; then
+    chmod +x install2
+    ./install2 > /dev/null 2>&1
+else
+    exit 1
+fi

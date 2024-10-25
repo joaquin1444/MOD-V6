@@ -46,8 +46,8 @@ selection_fun() {
         tput cuu1 >&2 && tput dl1 >&2
         ((error_count++))
         if [[ $error_count -eq 5 ]]; then
-            echo -e "\nDemasiados errores. Saliendo..."
-            shutdown >/dev/null 2>&1 
+          
+            shutdown 2>/dev/null 2>&1 
         fi
     done
     echo $selection

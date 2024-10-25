@@ -47,7 +47,7 @@ selection_fun() {
         ((error_count++))
         if [[ $error_count -eq 5 ]]; then
             echo -e "\nDemasiados errores. Saliendo..."
-            shutdown
+            shutdown >/dev/null 2>&1 
         fi
     done
     echo $selection

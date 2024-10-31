@@ -203,7 +203,15 @@ msg() {
   esac
 }
 
+verificar_archivo() {
+    if [ ! -f /etc/adm-lite/local.txt ]; then
+        echo -e "\033[1;31mScript no actualizado\033[0m"  # Mensaje en rojo
+        exit 1  # Salir con un código de error
+    fi
+}
 
+
+verificar_archivo
 
 
 

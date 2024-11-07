@@ -25,7 +25,7 @@
      y funcionamiento.
 
 -------------------------------------------------------
-                Cambios en el Script UDP Custom                
+                Cambios en el Script UDP Custom        
 -------------------------------------------------------
    - Se han realizado mejoras significativas en la 
      funcionalidad general del script.
@@ -36,6 +36,11 @@
 
    - Cambio de Aspecto en Menú Principal: Se ha 
      rediseñado el menú principal para mejorar la 
-     experiencia visual.    
+     experiencia visual.
+
 -------------------------------------------------------
+                Nueva Opción para Agregar Puerto OpenSSH
+-------------------------------------------------------
+   - Se ha añadido una opción para agregar puertos 
+     OpenSSH.
 

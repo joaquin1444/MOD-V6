@@ -1,46 +1,13 @@
 -------------------------------------------------------
-                Notas de Actualización                
+               notas de actualización                
 -------------------------------------------------------
-   - Cambio de Aspecto en Menú Principal: Se ha 
-     rediseñado el menú principal para mejorar
-     la experiencia visual.
-
-   - Opción de Actualización Mejorada: La opción 
-     de actualización ha sido mejorada para 
-     facilitar la instalación de nuevas versiones.
-
-   - Mejora en la Opción 2 - OPTIMIZAR VPS: Se ha 
-     optimizado el rendimiento de esta opción y se 
-     han agregado mejoras en la limpieza de cachés 
-     y memoria.
-
-   - Optimización y Corrección de Errores: Se han 
-     implementado mejoras en la eficiencia del 
-     script y corregido errores menores para 
-     asegurar un rendimiento óptimo.
-
-   - Mejoras en las Opciones 1-7 y en la Opción 
-     Principal: Se han optimizado y corregido 
-     varios errores para mejorar la estabilidad 
-     y funcionamiento.
+    nueva opción para agregar puerto openssh
+ - se ha añadido una opción para agregar puertos 
+   openssh.
+-------------------------------------------------------
+    mejoras en las opciones de editar usuarios registrados
+- se mejoraron las opciones quitar dias y añadir dias 
+     para renovar o restar días a los usuarios.
+- la opción está disponible en el menú 5-3-2.
 
 -------------------------------------------------------
-                Cambios en el Script UDP Custom        
--------------------------------------------------------
-   - Se han realizado mejoras significativas en la 
-     funcionalidad general del script.
-
-   - Se corrigió el error que creaba una regla 
-     predeterminada al reiniciar cuando ya había 
-     una regla existente.
-
-   - Cambio de Aspecto en Menú Principal: Se ha 
-     rediseñado el menú principal para mejorar la 
-     experiencia visual.
-
--------------------------------------------------------
-                Nueva Opción para Agregar Puerto OpenSSH
--------------------------------------------------------
-   - Se ha añadido una opción para agregar puertos 
-     OpenSSH.
-

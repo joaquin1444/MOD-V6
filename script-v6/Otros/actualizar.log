@@ -1,13 +1,17 @@
 -------------------------------------------------------
-               notas de actualización                
+               Notas de Actualización                
 -------------------------------------------------------
-    nueva opción para agregar puerto openssh
- - se ha añadido una opción para agregar puertos 
-   openssh.
+    Actualización del script SlowDNS de Chumo
+El script SlowDNS ha sido actualizado a su versión más reciente.
+
 -------------------------------------------------------
-    mejoras en las opciones de editar usuarios registrados
-- se mejoraron las opciones quitar dias y añadir dias 
-     para renovar o restar días a los usuarios.
-- la opción está disponible en el menú 5-3-2.
+    Nueva opción para agregar puerto OpenSSH
+- Se ha añadido una opción para agregar puertos OpenSSH.
+
+-------------------------------------------------------
+    Mejoras en las opciones de editar usuarios registrados
+- Se mejoraron las opciones de quitar días y añadir días 
+  para renovar o restar días a los usuarios.
+- La opción está disponible en el menú 5-3-2.
 
 -------------------------------------------------------

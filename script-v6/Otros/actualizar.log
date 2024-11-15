@@ -15,3 +15,12 @@ El script SlowDNS ha sido actualizado a su versión más reciente.
 - La opción está disponible en el menú 5-3-2.
 
 -------------------------------------------------------
+    Corregido el error de Dropbear
+- Se ha corregido el error de autenticación de usuarios en 
+  el servicio Dropbear.
+
+-------------------------------------------------------
+    Mejora de reseller con el instalador
+- Ahora funciona mejor agregar reseller con el instalador.
+  Se ha mejorado el proceso de configuración y registro de reseller
+-------------------------------------------------------

@@ -1,26 +1,34 @@
--------------------------------------------------------
+------------------------------------------------------- 
                Notas de Actualización                
--------------------------------------------------------
+------------------------------------------------------- 
+    Cambios en los enlaces y mejoras de funciones
+- Se han actualizado los enlaces para las opciones de Python, 
+  BadVPN y SlowDNS.
+- Se mejoraron las funciones relacionadas con la opción de 
+  desinstalación de SlowDNS, ahora es más eficiente y completa.
+
+------------------------------------------------------- 
     Actualización del script SlowDNS de Chumo
 El script SlowDNS ha sido actualizado a su versión más reciente.
 
--------------------------------------------------------
+------------------------------------------------------- 
     Nueva opción para agregar puerto OpenSSH
 - Se ha añadido una opción para agregar puertos OpenSSH.
 
--------------------------------------------------------
+------------------------------------------------------- 
     Mejoras en las opciones de editar usuarios registrados
 - Se mejoraron las opciones de quitar días y añadir días 
   para renovar o restar días a los usuarios.
 - La opción está disponible en el menú 5-3-2.
 
--------------------------------------------------------
+------------------------------------------------------- 
     Corregido el error de Dropbear
 - Se ha corregido el error de autenticación de usuarios en 
   el servicio Dropbear.
 
--------------------------------------------------------
+------------------------------------------------------- 
     Mejora de reseller con el instalador
 - Ahora funciona mejor agregar reseller con el instalador.
-  Se ha mejorado el proceso de configuración y registro de reseller
+  Se ha mejorado el proceso de configuración y registro de reseller.
+
 -------------------------------------------------------

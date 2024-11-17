@@ -31,7 +31,7 @@ shutdown() {
     pkill -f ferramentas
     pkill -f menu_inst
     pkill -f menu
-    pkill -f s.sh
+    pkill -f slowdns1
     exit 0
 }
 

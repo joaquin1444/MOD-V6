@@ -114,8 +114,16 @@ title(){
     fi
     msg -bar
  }
+enterr() {
+  text="►► Presione enter para continuar ◄◄"
+  if [[ -z $1 ]]; then
+    print_center -ama "$text"
+  else
+    print_center "$1" "$text"
+  fi
+  read
+}
 
-# finalizacion de tareas
  enter(){
   msg -bar
   text="►► Presione enter para continuar ◄◄"

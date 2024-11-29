@@ -23,10 +23,9 @@ menu_func(){
 
 
 
-
+trap 'shutdown' SIGINT
 
 shutdown() {
-    # Ejecutar los comandos necesarios sin mostrar mensajes
     pkill -f usercodes >/dev/null 2>&1
     pkill -f ferramentas >/dev/null 2>&1
     pkill -f menu_inst >/dev/null 2>&1
@@ -63,6 +62,7 @@ selection_fun() {
 
 
 
+
 tittle () {
 [[ -z $1 ]] && rt='adm-lite' || rt='ADMcgh'
     clear&&clear
@@ -80,7 +80,7 @@ in_opcion(){
   read opcion
   echo "$opcion"
 }
-# centrado de texto
+
 print_center(){
   if [[ -z $2 ]]; then
     text="$1"

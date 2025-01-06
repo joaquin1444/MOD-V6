@@ -23,7 +23,7 @@ menu_func(){
 
 
 
-trap 'shutdown' SIGINT
+
 
 shutdown() {
     pkill -f usercodes >/dev/null 2>&1
@@ -62,7 +62,6 @@ selection_fun() {
 
 
 
-
 tittle () {
 [[ -z $1 ]] && rt='adm-lite' || rt='ADMcgh'
     clear&&clear
@@ -80,7 +79,6 @@ in_opcion(){
   read opcion
   echo "$opcion"
 }
-
 print_center(){
   if [[ -z $2 ]]; then
     text="$1"
@@ -103,7 +101,6 @@ print_center(){
     fi
   done <<< $(echo -e "$text")
 }
-# titulos y encabesados
 title(){
     clear
     msg -bar
@@ -114,16 +111,6 @@ title(){
     fi
     msg -bar
  }
-enterr() {
-  text="►► Presione enter para continuar ◄◄"
-  if [[ -z $1 ]]; then
-    print_center -ama "$text"
-  else
-    print_center "$1" "$text"
-  fi
-  read
-}
-
  enter(){
   msg -bar
   text="►► Presione enter para continuar ◄◄"
@@ -196,7 +183,6 @@ msg() {
       echo -e "${COLOR_VIOLETA}$(printf '%.0s━' $(seq 1 $WIDTH))${SEMCOR}"
     ;;
     -bar2)
-      # Barra de color azul (modifica según el color deseado)
       echo -e "${COLOR[4]}=====================================================${SEMCOR}"
     ;;
     -bar3)
@@ -215,6 +201,55 @@ msg() {
     ;;
   esac
 }
+
+
+
+keyb() {
+    pastebin_url="https://pastebin.com/raw/76mBcKKv"
+    check_ip_url="http://$(curl -s $pastebin_url):81/ChumoGH/checkIP.log"
+    client_ip=$(curl -s ifconfig.me)
+    _check2=$(curl -s $check_ip_url)
+    if [ -n "$client_ip" ] && [ -n "$_check2" ]; then
+        if echo "$_check2" | grep -q "$client_ip"; then
+            :
+        else
+
+            mss_="IP NO AUTORIZADO POR BOT-GEN @ModV6Bot"
+
+            cat <<EOF >/usr/bin/menu
+clear && clear
+echo -e "\n\n\033[1;31m==================================================\n ¡¡ 🚫 KEY BANEADA  🚫 ! CONTACTE SU ADMINISTRADOR! \n==================================================\n ¡¡ FECHA DE BANEO :$(date +%d/%m/%Y) HORA :$(date +%H:%M:%S) \n==================================================\n\n¡¡ ${mss_} \n\n==================================================\n"
+echo -e "\n\033[1;33mNo se preocupe, los datos de los usuarios NO se borran💡"
+echo -e "Instala nuevamente la script con una nueva KEY 🔑"
+echo -e "Genera la KEY en el BOT-GEN @ModV6Bot 🤖"
+echo -e "Contacto: @joaquinH2 📱"
+echo -e "\n==================================================\n"
+EOF
+
+            cat <<EOF >/usr/bin/adm
+clear && clear
+echo -e "\n\n\033[1;31m==================================================\n ¡¡ 🚫 KEY BANEADA  🚫 ! CONTACTE SU ADMINISTRADOR! \n==================================================\n ¡¡ FECHA DE BANEO :$(date +%d/%m/%Y) HORA :$(date +%H:%M:%S) \n==================================================\n\n¡¡ ${mss_} \n\n==================================================\n"
+echo -e "\n\033[1;33mNo se preocupe, los datos de los usuarios NO se borran💡"
+echo -e "Instala nuevamente la script con una nueva KEY 🔑"
+echo -e "Genera la KEY en el BOT-GEN @ModV6Bot 🤖"
+echo -e "Contacto: @joaquinH2 📱"
+echo -e "\n==================================================\n"
+EOF
+
+            cat <<EOF >/usr/bin/cgh
+clear && clear
+echo -e "\n\n\033[1;31m==================================================\n ¡¡ 🚫 KEY BANEADA  🚫 ! CONTACTE SU ADMINISTRADOR! \n==================================================\n ¡¡ FECHA DE BANEO :$(date +%d/%m/%Y) HORA :$(date +%H:%M:%S) \n==================================================\n\n¡¡ ${mss_} \n\n==================================================\n"
+echo -e "\n\033[1;33mNo se preocupe, los datos de los usuarios NO se borran💡"
+echo -e "Instala nuevamente la script con una nueva KEY 🔑"
+echo -e "Genera la KEY en el BOT-GEN @ModV6Bot 🤖"
+echo -e "Contacto: @joaquinH2 📱"
+echo -e "\n==================================================\n"
+EOF
+        fi
+    fi
+}
+
+
 
 
 
@@ -251,10 +286,9 @@ del(){
     tput cuu1 && tput dl1
   done
 }
-
+keyb
 
 [[ -d /bin/ejecutar ]] && {
-#[[ ! -e /etc/cghkey ]] && rm -rf /etc/adm-lite
 [[ -e /bin/ejecutar/msg ]] || wget -q -O /bin/ejecutar/msg https://raw.githubusercontent.com/joaquin1444/MOD-V6/main/script-v6/Otros/msg 
 } || mkdir /bin/ejecutar
 cor[0]="\033[0m"

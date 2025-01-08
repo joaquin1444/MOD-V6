@@ -1,6 +1,10 @@
-------------------------------------------------------- 
-               Notas de Actualización                
-------------------------------------------------------- 
-opcion 5-20-3 y 5-20-9 fueron mejoradas para cambiar 
-contraseña y agregar root
+-------------------------------------------------------
+                Notas de Actualización                
+-------------------------------------------------------
+- Opción 5-20-3 y 5-20-9 fueron mejoradas para cambiar
+  contraseña y agregar root de forma más eficiente.
+
+-  limitador de login fue agregado en CONTROL USUARIOS
+  (Opción 13)
+
 -------------------------------------------------------

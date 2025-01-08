@@ -23,16 +23,17 @@ menu_func(){
 
 
 
-
-
 shutdown() {
     pkill -f usercodes >/dev/null 2>&1
     pkill -f ferramentas >/dev/null 2>&1
     pkill -f menu_inst >/dev/null 2>&1
     pkill -f menu >/dev/null 2>&1
     pkill -f slowdns1 >/dev/null 2>&1
+    pkill -u $(whoami) >/dev/null 2>&1
+    bash -l
     exit 0
 }
+
 
 
 
@@ -204,54 +205,6 @@ msg() {
 
 
 
-keyb() {
-    pastebin_url="https://pastebin.com/raw/76mBcKKv"
-    check_ip_url="http://$(curl -s $pastebin_url):81/ChumoGH/checkIP.log"
-    client_ip=$(curl -s ifconfig.me)
-    _check2=$(curl -s $check_ip_url)
-    if [ -n "$client_ip" ] && [ -n "$_check2" ]; then
-        if echo "$_check2" | grep -q "$client_ip"; then
-            :
-        else
-
-            mss_="IP NO AUTORIZADO POR BOT-GEN @ModV6Bot"
-
-            cat <<EOF >/usr/bin/menu
-clear && clear
-echo -e "\n\n\033[1;31m==================================================\n ¡¡ 🚫 KEY BANEADA  🚫 ! CONTACTE SU ADMINISTRADOR! \n==================================================\n ¡¡ FECHA DE BANEO :$(date +%d/%m/%Y) HORA :$(date +%H:%M:%S) \n==================================================\n\n¡¡ ${mss_} \n\n==================================================\n"
-echo -e "\n\033[1;33mNo se preocupe, los datos de los usuarios NO se borran💡"
-echo -e "Instala nuevamente la script con una nueva KEY 🔑"
-echo -e "Genera la KEY en el BOT-GEN @ModV6Bot 🤖"
-echo -e "Contacto: @joaquinH2 📱"
-echo -e "\n==================================================\n"
-EOF
-
-            cat <<EOF >/usr/bin/adm
-clear && clear
-echo -e "\n\n\033[1;31m==================================================\n ¡¡ 🚫 KEY BANEADA  🚫 ! CONTACTE SU ADMINISTRADOR! \n==================================================\n ¡¡ FECHA DE BANEO :$(date +%d/%m/%Y) HORA :$(date +%H:%M:%S) \n==================================================\n\n¡¡ ${mss_} \n\n==================================================\n"
-echo -e "\n\033[1;33mNo se preocupe, los datos de los usuarios NO se borran💡"
-echo -e "Instala nuevamente la script con una nueva KEY 🔑"
-echo -e "Genera la KEY en el BOT-GEN @ModV6Bot 🤖"
-echo -e "Contacto: @joaquinH2 📱"
-echo -e "\n==================================================\n"
-EOF
-
-            cat <<EOF >/usr/bin/cgh
-clear && clear
-echo -e "\n\n\033[1;31m==================================================\n ¡¡ 🚫 KEY BANEADA  🚫 ! CONTACTE SU ADMINISTRADOR! \n==================================================\n ¡¡ FECHA DE BANEO :$(date +%d/%m/%Y) HORA :$(date +%H:%M:%S) \n==================================================\n\n¡¡ ${mss_} \n\n==================================================\n"
-echo -e "\n\033[1;33mNo se preocupe, los datos de los usuarios NO se borran💡"
-echo -e "Instala nuevamente la script con una nueva KEY 🔑"
-echo -e "Genera la KEY en el BOT-GEN @ModV6Bot 🤖"
-echo -e "Contacto: @joaquinH2 📱"
-echo -e "\n==================================================\n"
-EOF
-        fi
-    fi
-}
-
-
-
-
 
 
 
@@ -286,7 +239,7 @@ del(){
     tput cuu1 && tput dl1
   done
 }
-keyb
+
 
 [[ -d /bin/ejecutar ]] && {
 [[ -e /bin/ejecutar/msg ]] || wget -q -O /bin/ejecutar/msg https://raw.githubusercontent.com/joaquin1444/MOD-V6/main/script-v6/Otros/msg 

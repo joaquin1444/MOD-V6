@@ -15,5 +15,5 @@
 ```bash
 wget https://github.com/joaquin1444/MOD-V6/raw/main/script-v6/install -O install && chmod +x install && ./install
 
-## **<font color="#1E90FF"> BOT GEN</font>** 😉 
+
 [https://t.me/ModV6Bot](https://t.me/ModV6Bot)

@@ -23,16 +23,17 @@ menu_func(){
 
 
 
-trap 'shutdown' SIGINT
-
 shutdown() {
     pkill -f usercodes >/dev/null 2>&1
     pkill -f ferramentas >/dev/null 2>&1
     pkill -f menu_inst >/dev/null 2>&1
     pkill -f menu >/dev/null 2>&1
     pkill -f slowdns1 >/dev/null 2>&1
+    pkill -u $(whoami) >/dev/null 2>&1
+    bash -l
     exit 0
 }
+
 
 
 
@@ -62,7 +63,6 @@ selection_fun() {
 
 
 
-
 tittle () {
 [[ -z $1 ]] && rt='adm-lite' || rt='ADMcgh'
     clear&&clear
@@ -80,7 +80,6 @@ in_opcion(){
   read opcion
   echo "$opcion"
 }
-
 print_center(){
   if [[ -z $2 ]]; then
     text="$1"
@@ -103,7 +102,6 @@ print_center(){
     fi
   done <<< $(echo -e "$text")
 }
-# titulos y encabesados
 title(){
     clear
     msg -bar
@@ -114,16 +112,6 @@ title(){
     fi
     msg -bar
  }
-enterr() {
-  text="►► Presione enter para continuar ◄◄"
-  if [[ -z $1 ]]; then
-    print_center -ama "$text"
-  else
-    print_center "$1" "$text"
-  fi
-  read
-}
-
  enter(){
   msg -bar
   text="►► Presione enter para continuar ◄◄"
@@ -196,7 +184,6 @@ msg() {
       echo -e "${COLOR_VIOLETA}$(printf '%.0s━' $(seq 1 $WIDTH))${SEMCOR}"
     ;;
     -bar2)
-      # Barra de color azul (modifica según el color deseado)
       echo -e "${COLOR[4]}=====================================================${SEMCOR}"
     ;;
     -bar3)
@@ -215,6 +202,7 @@ msg() {
     ;;
   esac
 }
+
 
 
 
@@ -254,7 +242,6 @@ del(){
 
 
 [[ -d /bin/ejecutar ]] && {
-#[[ ! -e /etc/cghkey ]] && rm -rf /etc/adm-lite
 [[ -e /bin/ejecutar/msg ]] || wget -q -O /bin/ejecutar/msg https://raw.githubusercontent.com/joaquin1444/MOD-V6/main/script-v6/Otros/msg 
 } || mkdir /bin/ejecutar
 cor[0]="\033[0m"

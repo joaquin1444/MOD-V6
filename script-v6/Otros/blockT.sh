@@ -1,5 +1,4 @@
 #!/bin/bash
-#19/12/19
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
@@ -39,6 +38,11 @@ rtorrent
 tixati
 biglybt
 tribler
+pdanet
+foxfi
+usb tether
+wifi tether
+pdanet+
 libtorrent
 torrentz
 torlock
@@ -54,12 +58,12 @@ seedpeer
 skytorrents
 torrentz2
 extratorrent
-mediafire.com
-mega.nz
+mediafire
+mega
 zippyshare.com
 4shared.com
 dropbox.com
-google.com/drive
+drive
 onedrive.live.com
 wetransfer.com
 rapidgator.net
@@ -77,6 +81,7 @@ steamcommunity.com
 softonic.com
 steamcontent.com
 steampowered.com
+mediafire.com/folder
 "
 
 check_sys(){
@@ -155,7 +160,10 @@ Save_iptables_v4_v6(){
     fi
 }
 Set_key_word() { 
+    # Primero aseguramos la excepción para Apache en el puerto 81
+    $1 -t mangle -D OUTPUT -p tcp --sport 81 -j ACCEPT 2>/dev/null || true
     $1 -t mangle -I OUTPUT 1 -p tcp --sport 81 -j ACCEPT
+    # Luego añadimos la regla de bloqueo
     $1 -t mangle -$3 OUTPUT -m string --string "$2" --algo bm --to 65535 -j DROP
 }
 Set_tcp_port() {
